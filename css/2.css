@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #e3ecf7, #f7f9fc);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 350px;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: muncul 1s ease;
+}
+
+.logo-main {
+    background: #5865F2;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: white;
+    font-size: 40px;
+    transition: transform 0.3s ease;
+}
+
+.logo-main:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 35px rgba(88,101,242,1);
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(255,255,255,0.9);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.menu-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #5865F2;
+    text-shadow: 0 0 8px rgba(88,101,242,0.8));
+}
+
+.menu-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+
+@keyframes muncul {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-text {
+        font-size: 18px;
+    }
+    .menu-icon {
+        font-size: 22px;
+    }
+}
