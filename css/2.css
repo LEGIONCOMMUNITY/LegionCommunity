@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
     backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: 40px 30px;
@@ -23,7 +23,8 @@ body {
     max-width: 400px;
     text-align: center;
     border: 1px solid rgba(255,255,255,0.15);
-    animation: muncul 1s ease;
+    animation: muncul 1s ease, breating 6s infinite alternate ease-in-out;
+    margin: 100px auto 50px auto;
 }
 
 .logo-main {
@@ -60,13 +61,14 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     margin-bottom: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.4s ease;
     cursor: pointer;
     border: 1px solid rgba(255,255,255.0.15);
 }
 
 .menu-item:hover {
     transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
     box-shadow: 0 8px 25px rgba(0,0,0,0.7);
 }
 
@@ -89,6 +91,72 @@ body {
     color: #ffffff;
 }
 
+.header-section {
+    margin-bottom: 30px;
+}
+
+.header-section h1 {
+    color: white;
+    font-size: 32px;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.header-section p {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.navbar-logo span {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-menu a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: #00ff99;
+}
+
 @keyframes muncul {
     0% {
         opacity: 0;
@@ -98,6 +166,10 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes breating {
+    from { box-shadow: 0 10px 30px rgba(0,0,0,0.6); } to { box-shadow: 0,0,0,0.8; }
 }
 
 @media (max-width: 768px) {
